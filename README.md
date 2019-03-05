@@ -1,6 +1,19 @@
 # IvanGuba_microservices
 IvanGuba microservices repository
 
+ДЗ15 Docker: сети, docker-compose.
+	
+    Запущен контейнер с использованием none-драйвера
+	Запущен контейнер в сетевом пространстве docker-хоста
+	Cоздана bridge-сети и запущено с ее помощью приложение
+	Созданы сетевые алиасы и запущены контейнеры с их использованием
+	Запущено приложение в 2-х bridge сетях
+	Подключены контейнеры к сетям front и back
+	Создан файл 'docker-compose'
+	Добавлен файл с параметрами '.env' и модифицирован 'docker-compose' для ипользования переменных
+	Изменить имя проекта docker-compose можно через команду 'export COMPOSE_PROJECT_NAME=<new profect name>'
+
+
 ДЗ14 Docker-образы. Микросервисы
 	
     Для каждого из трех компонентов создан Dockerfile

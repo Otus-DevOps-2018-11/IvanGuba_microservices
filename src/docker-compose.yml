@@ -1,0 +1,53 @@
+version: '3.3'
+services:
+  post_db:
+    image: mongo:${MongoVer}
+    volumes:
+      - post_db:/data/db
+    networks:
+      BackNet:
+        aliases:
+          - post_db
+          - comment_db
+  ui:
+    build: ./ui
+    image: ${Username}/ui:${UiVer}
+    ports:
+      - ${HostPort}:${ContainerPort}/tcp
+    networks:
+      - FrontNet
+  post:
+    build: ./post-py
+    image: ${Username}/post:${PostVer}
+    networks:
+      FrontNet:
+        aliases:
+          - post
+      BackNet:
+        aliases:
+          - post
+  comment:
+    build: ./comment
+    image: ${Username}/comment:${CommentVer}
+    networks:
+      FrontNet:
+        aliases:
+          - comment
+      BackNet:
+        aliases:
+          - comment
+
+volumes:
+  post_db:
+
+networks:
+    FrontNet:
+      ipam:
+        config:
+          - subnet: ${FNSubnet}
+    BackNet:
+      ipam:
+        config:
+          - subnet: ${BNSubnet}
+
+    
