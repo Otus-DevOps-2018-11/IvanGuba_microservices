@@ -43,7 +43,7 @@ staging:
   stage: stage
   when: manual
   script:
-    - echo "Deploy stage"
+    - echo 'Deploy stage'
     environment:
     name: stage
     url: http://beta.example.com
@@ -52,7 +52,7 @@ production:
   stage: production
   when: manual
   script:
-    - echo "Deploy production"
+    - echo 'Deploy production'
     environment:
     name: production
     url: http://example.com
