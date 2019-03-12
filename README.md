@@ -1,7 +1,19 @@
 # IvanGuba_microservices
 IvanGuba microservices repository
 
-ДЗ15 Docker: сети, docker-compose.
+ДЗ 16 GitLab CI.
+
+	Создан инстанс GCP с помощью Terraform
+	На инстанс установлен docker и docker compose, развернут запущен image gitlab c помощью Ansible
+	Заупушен runner, произведена регистрация
+	Добавлен исходный код reddit в репозиторий
+	Добавлены тесты в gitlab-ci
+	Добавлено dev окружение
+	Добавлены stage и production окружения
+	Добавлена директива, которая не позволяет выкатить на staging и production код, не помеченный с помощью тэга в git (only: - /^\d+.\d+.\d+/)
+	Добавлен job, который определяет динамическое окружение для каждой ветки в репозитории, кроме ветки master
+
+ДЗ 15 Docker: сети, docker-compose.
 	
     Запущен контейнер с использованием none-драйвера
 	Запущен контейнер в сетевом пространстве docker-хоста
@@ -14,7 +26,7 @@ IvanGuba microservices repository
 	Изменить имя проекта docker-compose можно через команду 'export COMPOSE_PROJECT_NAME=<new profect name>'
 
 
-ДЗ14 Docker-образы. Микросервисы
+ДЗ 14 Docker-образы. Микросервисы
 	
     Для каждого из трех компонентов создан Dockerfile
     Скачен последний образ MongoDB
@@ -27,7 +39,7 @@ IvanGuba microservices repository
     Проверено наличие поста после перезапуска контейнеров
 
 
-ДЗ13 Docker-контейнеры
+ДЗ 13 Docker-контейнеры
 	Создан новый проект в GCE и выполнена авторизация через gcloud sdk
 	Установлен docker-machine
 	Создан инстан в GCE через docker-machine
@@ -39,7 +51,7 @@ IvanGuba microservices repository
 	Проверен запуск контейнера из образа в docker-hub
 	Опробованы команды, с помощью которых можно работать с образом и контейнером
 
-ДЗ12 Введение в Docker
+ДЗ 12 Введение в Docker
 
 	Установлен и запущен Docker
 	Опробованы основные команды Docker
