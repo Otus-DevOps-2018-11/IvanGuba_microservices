@@ -1,6 +1,15 @@
 # IvanGuba_microservices
 IvanGuba microservices repository
 
+ДЗ 17 Введение в мониторинг.
+
+    Созданы правила брандмауэра и новая виртуалка, запущен контейнер prometheus
+    Создана директория monitoring/prometheus. Добавлены Dockerfile и yml-файл. Собран образ.
+    Изменена структура папок
+    Запущены сервисы. Проверено состояние endpoints. Проверены реакция графиков на отключение сервисов.
+    Добавлен node-explorer
+    Образы запушены в https://hub.docker.com/u/ivanivanivan/
+
 ДЗ 16 GitLab CI.
 
 	Создан инстанс GCP с помощью Terraform
