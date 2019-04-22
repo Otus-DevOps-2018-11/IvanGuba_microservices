@@ -14,10 +14,24 @@ services:
     image: ${Username}/ui:latest
     ports:
       - ${HostPort}:${ContainerPort}/tcp
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: service.ui  
     networks:
       - FrontNet
   post:
     image: ${Username}/post:latest
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: service.post
     networks:
       FrontNet:
         aliases:
@@ -27,6 +41,8 @@ services:
           - post
   comment:
     image: ${Username}/comment:latest
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
     networks:
       FrontNet:
         aliases:
