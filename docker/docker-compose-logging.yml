@@ -1,0 +1,39 @@
+---
+version: '3.3'
+services:
+  fluentd:
+    image: fluent/fluentd:latest
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+
+  elasticsearch:
+    image: amazon/opendistro-for-elasticsearch:0.7.0
+    expose:
+      - 9200
+    ports:
+      - "9200:9200"
+
+  kibana:
+    image: amazon/opendistro-for-elasticsearch-kibana:0.7.0
+    ports:
+      - "5601:5601"
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - FrontNet
+      - BackNet
+
+networks:
+  FrontNet:
+    ipam:
+      config:
+        - subnet: ${FNSubnet}
+  BackNet:
+    ipam:
+      config:
+        - subnet: ${BNSubnet}
+
